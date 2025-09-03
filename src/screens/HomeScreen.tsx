@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-const HomeScreen = () => {
+const HomeScreen: React.FC = (): React.JSX.Element => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to BusBee!</Text>

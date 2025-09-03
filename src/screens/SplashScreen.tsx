@@ -3,8 +3,12 @@ import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import BusLogo from '../components/BusLogo';
 
-const SplashScreen = ({ onFinish }) => {
-  const [showSplash, setShowSplash] = useState(true);
+interface SplashScreenProps {
+  onFinish?: () => void;
+}
+
+const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }): React.JSX.Element | null => {
+  const [showSplash, setShowSplash] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

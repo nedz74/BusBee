@@ -11,4 +11,6 @@ export const Colors = {
     primary: '#fff',
     secondary: '#1a1a1a',
   },
-};
+} as const;
+
+export type Colors = typeof Colors;

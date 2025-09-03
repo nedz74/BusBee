@@ -6,7 +6,13 @@ const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
-const BusLogo = (props) => {
+interface BusLogoProps {
+  width?: number;
+  height?: number;
+  fill?: string;
+}
+
+const BusLogo: React.FC<BusLogoProps> = (props): React.JSX.Element => {
   const strokeDashoffset = useRef(new Animated.Value(1000)).current;
   const fillOpacity = useRef(new Animated.Value(0)).current;
   const headlightOpacity = useRef(new Animated.Value(0)).current;
@@ -62,7 +68,7 @@ const BusLogo = (props) => {
   }, []);
 
   return (
-    <AnimatedSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" {...props}>
+    <AnimatedSvg viewBox="0 0 640 640" {...props}>
       <Defs>
         <LinearGradient id="headlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <Stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />

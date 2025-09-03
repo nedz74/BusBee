@@ -3,4 +3,6 @@ export const AppConstants = {
   ANIMATION_DURATION: 1900, // 1.9 seconds for logo animation
   APP_NAME: 'BusBee',
   APP_TAGLINE: 'Your bus tracking companion',
-};
+} as const;
+
+export type AppConstants = typeof AppConstants;
